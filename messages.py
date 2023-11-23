@@ -1,8 +1,8 @@
 MESSAGES = {
-    'welcome': "Hello! I am the Air Quality Bot. Send me the name of a city "
-               "or location, and I will provide you with air quality information.",
-    'error': "Sorry, I couldn't retrieve air quality information for {city}. "
-             "Please try again.",
+    'welcome': "Привіт! Я екологічний бот. Надішліть мені назву міста чи "
+               "локації, і я надам вам інформацію про якість повітря.",
+    'error': "Вибачте, я не зміг отримати інформацію про якість повітря для {city}. "
+             "Будь ласка, спробуйте ще раз.",
 }
 
 

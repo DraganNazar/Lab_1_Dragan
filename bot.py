@@ -12,29 +12,29 @@ def generate_air_quality_message(city, air_quality_info):
     aqi = air_quality_info['main']['aqi']
     components = air_quality_info['components']
 
-    response = f"<b>Air Quality in {city.capitalize()}:</b>\n"
-    response += f"<b>Air Quality Index (AQI):</b> {aqi} - {get_aqi_index(aqi)}\n"
-    response += "<b>Pollutant Levels:</b>\n"
+    response = f"<b>Якість Повітря в {city.capitalize()}:</b>\n"
+    response += f"<b>Індекс Якості Повітря (ІЯП):</b> {aqi} - {get_aqi_index(aqi)}\n"
+    response += "<b>Рівні Забруднення:</b>\n"
 
     for pollutant, value in components.items():
         response += f"{pollutant.capitalize()}: {value} µg/m³\n"
 
-    response += f"<b>Last Updated:</b> {format_last_updated(air_quality_info['dt'])}"
+    response += f"<b>Останнє Оновлення:</b> {format_last_updated(air_quality_info['dt'])}"
 
     return response
 
 
 def get_aqi_index(aqi):
     if 0 <= aqi < 20:
-        return "Good"
+        return "Добре"
     elif 20 <= aqi < 80:
-        return "Fair"
+        return "Задовільно"
     elif 80 <= aqi < 250:
-        return "Moderate"
+        return "Модеровано"
     elif 250 <= aqi < 350:
-        return "Poor"
+        return "Погано"
     else:
-        return "Very Poor"
+        return "Дуже Погано"
 
 
 def handle_air_quality_message(city, air_quality_data):
@@ -65,7 +65,7 @@ def location_handler(message):
     location = message.location
     air_quality_data = get_air_quality_data((location.latitude,
                                             location.longitude))
-    response = handle_air_quality_message('the provided location', 
+    response = handle_air_quality_message('наданому місці', 
                                           air_quality_data)
     bot.reply_to(message, response)
 
