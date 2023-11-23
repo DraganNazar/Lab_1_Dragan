@@ -6,7 +6,7 @@ This Telegram bot provides information about air quality in different locations.
 
 - Get real-time air quality data for a specific city or location.
 - Supports location-based queries using Telegram's location sharing feature.
-- 
+
 ## Setup
 
 1. Clone the repository.
