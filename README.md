@@ -50,3 +50,4 @@ Contributions to the Telegram Air Quality Bot are welcome! If you find any issue
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
+* Author: Valentyn Stratii
